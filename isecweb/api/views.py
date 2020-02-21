@@ -22,7 +22,7 @@ config = json.loads(config)
 firebase = pyrebase.initialize_app(config)
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkcore.request import CommonRequest
-client = AcsClient('LTAI4FjqARfZR71hEQjfrw1X', 'sWuVpoIyhwiBaJyJ5GCjjkjfVYsD54', 'ap-southeast-1')
+client = AcsClient('...', '...', 'ap-southeast-1')
 db = firebase.database()
 import urllib
 
