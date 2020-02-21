@@ -30,7 +30,7 @@ import urllib
 
 def sendmsg(message, number):
     url = "https://www.fast2sms.com/dev/bulk"
-    headers = {'authorization': "aLUih148DjMFqwmK3u6l9rN7xOQWnEoYscpJSkAIfCz5Xv0tRPo5ZTNOQ0SDRz6ACBtilXpYs3WnVma8",'Content-Type': "application/x-www-form-urlencoded",'Cache-Control': "no-cache",}
+    headers = {'authorization': "...",'Content-Type': "application/x-www-form-urlencoded",'Cache-Control': "no-cache",}
     payload = {'sender_id': 'FSTSMS', 'message': message, 'language': 'english', 'route': 'p', 'numbers': number}
     payload = urllib.parse.urlencode(payload, quote_via=urllib.parse.quote)
     response = requests.request("POST", url, data=payload, headers=headers)
