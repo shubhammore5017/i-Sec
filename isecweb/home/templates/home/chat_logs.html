@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<h1>Chat Logs</h1>
+
+<table id="example" class="display">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Message ID</th>
+            <th>User</th>
+            <th>Message</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for i in data %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.message_id }}</td>
+        <td>{{ i.tele_user }}</td>
+        <td>{{ i.text }}</td>
+        <td>{{ i.time }}</td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% endblock content %}

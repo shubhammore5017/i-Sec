@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+{% if messages %}
+                    {% for message in messages %}
+                      <p class="alert alert-{{message.tags}}">{{ message }}</p>
+                    {% endfor %}
+                  {% endif %}
+                  {% if form.errors %}
+	                  <div id="errors">
+		                  <div class="inner">
+			                  {{ form.non_field_errors }}      
+				                {% for field in form %}
+					                {% if field.errors %}
+                            {{ field.label }}: {{ field.errors|striptags }}<br>
+                          {% endif %}
+				                {% endfor %}
+                      </div>
+	                  </div>
+                  {% endif %}
+
+
+                  <br><br>
+
+
+<h1>Welcome {{ user.username }}</h1>
+<br><br>
+<a href="{% url 'home-tele' %}" class="btn btn-primary">Telegram</a> &nbsp; &nbsp;
+<a href="{% url 'home-chat-logs' %}" class="btn btn-primary">Chat Logs</a> &nbsp; &nbsp;
+<a href="{% url 'home-media' %}" class="btn btn-primary">Media History</a> &nbsp; &nbsp;
+{% comment %} <a href="" class="btn btn-primary">Live Steam</a> &nbsp; &nbsp; {% endcomment %}
+
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+{% if messages %}
+                    {% for message in messages %}
+                      <p class="alert alert-{{message.tags}}">{{ message }}</p>
+                    {% endfor %}
+                  {% endif %}
+                  {% if form.errors %}
+	                  <div id="errors">
+		                  <div class="inner">
+			                  {{ form.non_field_errors }}      
+				                {% for field in form %}
+					                {% if field.errors %}
+                            {{ field.label }}: {{ field.errors|striptags }}<br>
+                          {% endif %}
+				                {% endfor %}
+                      </div>
+	                  </div>
+                  {% endif %}
+
+
+                  <br><br>
+
+
+<h1>Media History</h1>
+<br><br>
+{% for i in img %}
+  <div class="row">
+    <div class="col">
+        <img src="{{ i.media.url }}" alt=""> 
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        {{ i.date }}
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+{% block content %}
+
+{% if messages %}
+                    {% for message in messages %}
+                      <p class="alert alert-{{message.tags}}">{{ message }}</p>
+                    {% endfor %}
+                  {% endif %}
+                  {% if form.errors %}
+	                  <div id="errors">
+		                  <div class="inner">
+			                  {{ form.non_field_errors }}      
+				                {% for field in form %}
+					                {% if field.errors %}
+                            {{ field.label }}: {{ field.errors|striptags }}<br>
+                          {% endif %}
+				                {% endfor %}
+                      </div>
+	                  </div>
+                  {% endif %}
+<form class="form-signin" style="width: 100%;max-width: 330px;padding: 15px;margin: auto;" method="POST" action='' >
+    {% csrf_token %}
+  <!-- <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+  <br>
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <br>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  {{form.username}}<br>
+  <label for="inputPassword" class="sr-only">Password</label>
+  {{form.password}}<br>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <a href="{% url 'auth-register' %}" class="btn btn-lg btn-primary btn-block">Register</a>
+  <a href="{% url 'index' %}" class="btn btn-lg btn-primary btn-block">Home</a>
+
+  
+</form>
+{% endblock content %}

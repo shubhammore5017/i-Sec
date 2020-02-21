@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    Index Page
+{% endblock title %}
+
+{% block content %}
+<br><br><br>
+<center>
+    <h1>i-Sec</h1>
+    <p><b><i>Intelligent Security</i></b></p>
+    
+    <br>
+    <a href="{% url 'auth-login' %}" class="btn btn-primary ">Login </a>&nbsp &nbsp 
+        <a href="{% url 'auth-register' %}" class="btn btn-primary ">Register </a>
+
+
+
+        
+</center>
+
+    
+
+{% endblock content %}

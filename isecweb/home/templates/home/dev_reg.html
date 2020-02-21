@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+{% if messages %}
+                    {% for message in messages %}
+                      <p class="alert alert-{{message.tags}}">{{ message }}</p>
+                    {% endfor %}
+                  {% endif %}
+                  {% if form.errors %}
+	                  <div id="errors">
+		                  <div class="inner">
+			                  {{ form.non_field_errors }}      
+				                {% for field in form %}
+					                {% if field.errors %}
+                            {{ field.label }}: {{ field.errors|striptags }}<br>
+                          {% endif %}
+				                {% endfor %}
+                      </div>
+	                  </div>
+                  {% endif %}
+
+                  <br><br>
+<h1>Register Your Device</h1>
+<br><br>
+<form class="form-signin" style="width: 100%;max-width: 330px;padding: 15px;margin: auto;" method="POST" action='' >
+    {% csrf_token %}
+    <input type="text" name="devid" id="devid" class="form-control" placeholder="Enter Device Id" autofocus required><br>
+    <input type="submit" name="submit" id="submit" value="Register" class="btn btn-danger">
+</form>
+{% endblock content %}

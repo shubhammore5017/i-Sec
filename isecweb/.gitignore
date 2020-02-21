@@ -1,0 +1,13 @@
+venv/
+db.sqlite3
+*.pyc
+.vscode
+data.json
+data2.json
+qrcode.png
+api/testfile.py
+testfile.txt
+firebaseconfig.json
+serviceAccountCredentials.json
+qr.png
+storage/
