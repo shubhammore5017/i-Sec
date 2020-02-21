@@ -14,7 +14,7 @@ import datetime
 import os
 import requests
 import pyrebase
-token = '1021159267:AAGwdD6c_WB9iIpFXQI8VQjlroMrM8D0Z9I'
+token = '1021159267:...'
 bot = telebot.TeleBot(token)
 with open('firebaseconfig.json') as f:
     config = f.read()
