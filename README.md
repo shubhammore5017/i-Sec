@@ -11,5 +11,3 @@ Contributors
 1. Karan Jadhav
 2. Shubham More
 3. Vaibhav Ujagare
-4. Vidya Bhosle
-5. Pratik Singh
